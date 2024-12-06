@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('senha');
             $table->string('cpf', 11);
             $table->string('telefone', 15);
-            $table->string('isAdmin')->default(false);
-            $table->string('isAtivo')->default(true);
+            $table->boolean('isAdmin')->default(false);
+            $table->boolean('isAtivo')->default(true);
             $table->timestamps();
         });
     }

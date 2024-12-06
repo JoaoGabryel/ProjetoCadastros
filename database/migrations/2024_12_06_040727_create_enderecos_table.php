@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('enderecos', function (Blueprint $table) {
             $table->id();
-            $table->forenginId('usuario_id')->constrained('usuarios')->onDelete('cascade');
             $table->string('rua');
             $table->string('numero');
             $table->string('complemento');
@@ -21,6 +20,7 @@ return new class extends Migration
             $table->string('cidade');
             $table->string('cep');
             $table->string('estado');
+            $table->foreignId('usuario_id')->constrained('usuarios')->onDelete('cascade');
             $table->timestamps();
         });
     }
